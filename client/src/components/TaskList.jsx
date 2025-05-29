@@ -136,7 +136,7 @@ const TaskList = ({ tasks: initialTasks, onTaskUpdate }) => {
         return;
       }
       const response = await axios.post(
-        'http://localhost:5000/api/tasks',
+        `${import.meta.env.VITE_API_URL}/api/tasks`,
         { title: trimmedTask },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -165,7 +165,7 @@ const TaskList = ({ tasks: initialTasks, onTaskUpdate }) => {
         return;
       }
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/tasks/${id}`,
         updates,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -187,7 +187,7 @@ const TaskList = ({ tasks: initialTasks, onTaskUpdate }) => {
         navigate('/');
         return;
       }
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(tasks.filter(task => task._id !== id));
@@ -209,7 +209,7 @@ const TaskList = ({ tasks: initialTasks, onTaskUpdate }) => {
         return;
       }
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/tasks/${id}`,
         { title: newTitle },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -238,7 +238,7 @@ const TaskList = ({ tasks: initialTasks, onTaskUpdate }) => {
         return;
       }
       await axios.put(
-        `http://localhost:5000/api/tasks/${movedTask._id}/reorder`,
+        `${import.meta.env.VITE_API_URL}/api/tasks/${movedTask._id}/reorder`,
         { newOrder: toIndex },
         { headers: { Authorization: `Bearer ${token}` } }
       );
