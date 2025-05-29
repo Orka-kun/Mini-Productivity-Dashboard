@@ -20,11 +20,11 @@ mongoose.connect(process.env.MONGODB_URI);
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // })
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-    process.exit(1);
-  });
+//   .then(() => console.log('MongoDB connected successfully'))
+//   .catch(err => {
+//     console.error('MongoDB connection error:', err);
+//     process.exit(1);
+//   });
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/tasks', require('./routes/tasks'));
