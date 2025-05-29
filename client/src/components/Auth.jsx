@@ -13,7 +13,7 @@ const Auth = ({ setUsername, isLogin = true }) => {
     e.preventDefault();
     try {
       const endpoint = isLogin ? 'login' : 'register';
-      const response = await axios.post(`http://localhost:5000/api/auth/${endpoint}`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/${endpoint}`, {
         email,
         password,
         username: isLogin ? undefined : username,
