@@ -1,6 +1,6 @@
 # Mini-Productivity-Dashboard
 
-Welcome to the **Mini-Productivity-Dashboard**, a web application designed to help you manage your tasks and goals efficiently. This app features a user-friendly interface to add, edit, delete, and track the completion of tasks and goals, along with an inspirational quote feature. The application is built with a separated frontend (React with Vite) and backend (Node.js with Express), deployed on Render, and uses MongoDB Atlas for data storage.
+Welcome to the **Mini-Productivity-Dashboard**, a web application designed to help you manage your tasks and goals efficiently. This app features a user-friendly interface to add, edit, delete, and track the completion of tasks and goals, along with an inspirational quote feature. The application is built with a separated frontend React and Tailwind CSS and backend (Node.js with Express), deployed on Render, and uses MongoDB Atlas for data storage.
 
 ## Features
 - User authentication (register and login).
