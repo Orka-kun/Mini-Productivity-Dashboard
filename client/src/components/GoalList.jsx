@@ -147,7 +147,7 @@ const GoalList = ({ goals: initialGoals, onGoalUpdate }) => {
         return;
       }
       const response = await axios.post(
-        'http://localhost:5000/api/goals',
+        `${import.meta.env.VITE_API_URL}/api/goals`,
         { title: trimmedGoal, completed: false, type: goalType },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -184,7 +184,7 @@ const GoalList = ({ goals: initialGoals, onGoalUpdate }) => {
         return;
       }
       const response = await axios.put(
-        `http://localhost:5000/api/goals/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/goals/${id}`,
         { completed },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -208,7 +208,7 @@ const GoalList = ({ goals: initialGoals, onGoalUpdate }) => {
         navigate('/');
         return;
       }
-      await axios.delete(`http://localhost:5000/api/goals/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/goals/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setGoals(goals.filter(goal => goal._id !== id));
@@ -230,7 +230,7 @@ const GoalList = ({ goals: initialGoals, onGoalUpdate }) => {
         return;
       }
       const response = await axios.put(
-        `http://localhost:5000/api/goals/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/goals/${id}`,
         { title: newTitle, type: newType },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -259,7 +259,7 @@ const GoalList = ({ goals: initialGoals, onGoalUpdate }) => {
         return;
       }
       const response = await axios.put(
-        `http://localhost:5000/api/goals/${movedGoal._id}/reorder`,
+        `${import.meta.env.VITE_API_URL}/api/goals/${movedGoal._id}/reorder`,
         { newOrder: toIndex },
         { headers: { Authorization: `Bearer ${token}` } }
       );
