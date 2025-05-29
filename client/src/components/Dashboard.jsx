@@ -23,7 +23,7 @@ const Dashboard = ({ username, theme }) => {
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get('${import.meta.env.VITE_API_URL}/api/quote?refresh=true');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/quote?refresh=true`);
       if (response.data && response.data.quote && response.data.author) {
         setQuote(response.data);
         setError(null);
@@ -45,7 +45,7 @@ const Dashboard = ({ username, theme }) => {
         navigate('/login');
         return;
       }
-      const response = await axios.get('${import.meta.env.VITE_API_URL}/api/tasks', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(response.data);
@@ -70,7 +70,7 @@ const Dashboard = ({ username, theme }) => {
         navigate('/login');
         return;
       }
-      const response = await axios.get('${import.meta.env.VITE_API_URL}/api/goals', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/goals`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setGoals(response.data);
